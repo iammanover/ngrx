@@ -1,0 +1,47 @@
+<form [formGroup]="formData"  (ngSubmit)="formData.valid && onSubmit()" >
+  <table >
+      <tr>
+          <th colspan="2"></th>
+      </tr>
+     
+      <tr>
+          <td> Name</td>
+          <td><input formControlName="Name" type="text" ></td>
+      </tr>
+      <tr>
+          <td> Description</td>
+          <td><input formControlName="Description" type="text" ></td>
+      </tr>
+
+      <tr>
+          <td> Price</td>
+          <td><input formControlName="Price" type="number" ></td>
+      </tr>
+      <tr>
+          <td> offer</td>
+          <td><input formControlName="Offer" type="number" ></td>
+      </tr>
+      <tr>
+          <td colspan="2"><input type="submit" value="Submit" /></td>
+      </tr>
+  </table>
+</form>
+
+<table class="table  table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
+      <th scope="col">offer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let value of values">
+      <th scope="row">{{value.Name}}</th>
+      <td>{{value.Description}}</td>
+      <td>{{value.Price}}</td>
+      <td>{{value.Offer}}</td>
+    </tr>
+  </tbody>
+</table>
